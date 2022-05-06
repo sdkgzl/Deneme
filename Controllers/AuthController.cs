@@ -29,7 +29,12 @@ namespace MiraProject.Controllers
         }
 
 
+        [HttpPost("deneme")]
+        public async Task<IActionResult> Sadik(AuthenticateRequestDto request)
+        {
+            return ActionResultInstance(await _authBusinessRules.Authenticate(request));
+        }
 
-        
+
     }
 }
